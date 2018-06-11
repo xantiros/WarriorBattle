@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarriorBattle.Core", "WarriorBattle.Core\WarriorBattle.Core.csproj", "{737657A9-84DD-47D9-83A0-34DBF396BC58}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarriorBattle.Infrastructure", "WarriorBattle.Infrastructure\WarriorBattle.Infrastructure.csproj", "{4A658985-C957-422B-B426-21FAEDBAB853}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarriorBattle.Api", "WarriorBattle.Api\WarriorBattle.Api.csproj", "{06CBCD72-2441-48B3-B8F9-D3AD36132A22}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{737657A9-84DD-47D9-83A0-34DBF396BC58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{737657A9-84DD-47D9-83A0-34DBF396BC58}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{737657A9-84DD-47D9-83A0-34DBF396BC58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A658985-C957-422B-B426-21FAEDBAB853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A658985-C957-422B-B426-21FAEDBAB853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A658985-C957-422B-B426-21FAEDBAB853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A658985-C957-422B-B426-21FAEDBAB853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06CBCD72-2441-48B3-B8F9-D3AD36132A22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06CBCD72-2441-48B3-B8F9-D3AD36132A22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06CBCD72-2441-48B3-B8F9-D3AD36132A22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06CBCD72-2441-48B3-B8F9-D3AD36132A22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
