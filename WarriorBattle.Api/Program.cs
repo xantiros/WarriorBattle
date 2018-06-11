@@ -14,8 +14,6 @@ namespace WarriorBattle.Api
 
             WarriorService warriorService = new WarriorService(inMemoryWarriorRepository);
 
-            warriorService.Create(3, "abc", 10, 10, 10);
-
             warriorService.Create(1, "Maximus", 500, 60, 20);
 
             warriorService.Create(2, "Olimpus", 500, 60, 20);
@@ -24,7 +22,15 @@ namespace WarriorBattle.Api
             warriorService.Get(1).Name,
             warriorService.Get(2).Name);
 
-            
+            WarriorDto warriorDto = new WarriorDto();
+
+
+
+            var attack1 = warriorService.Attack(warriorService.Get(1).WarriorId, 10);
+            Console.WriteLine($"Attack with: {attack1}");
+
+            var block = warriorService.Block(warriorService.Get(1));
+            Console.WriteLine($"Block: {block}");
 
             var all = inMemoryWarriorRepository.GetAll();
 

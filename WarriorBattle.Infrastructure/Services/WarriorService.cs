@@ -11,7 +11,7 @@ namespace WarriorBattle.Infrastructure.Services
     {
         private readonly IWarriorRepository _warriorRepository;
 
-        public WarriorService(IWarriorRepository warriorRepository) //konstruktor
+        public WarriorService(IWarriorRepository warriorRepository) //konstruktor, na wejscie dajemy repozytoriums
         {
             _warriorRepository = warriorRepository;
         }
@@ -35,6 +35,25 @@ namespace WarriorBattle.Infrastructure.Services
             _warriorRepository.Add(warrior);
         }
 
+        //
+        Random rdn = new Random();
+        //
+        public void Training(Warrior warrior)
+        {
+            warrior.SetHealth(warrior.Health + rdn.Next(10, 51));
+            warrior.SetAttMax(warrior.AttMax + rdn.Next(1, 11));
+            warrior.SetBlockMax(warrior.BlockMax + rdn.Next(1, 6));
+        }
 
+        public int Attack(int warriorId, int attack)
+        {
+            var warrior = _warriorRepository.Get(warriorId);
+            return rdn.Next(1, (int)warrior.AttMax);
+        }
+
+        public double Block(WarriorDto warrior)
+        {
+            return rdn.Next(1, (int)warrior.BlockMax);
+        }
     }
 }

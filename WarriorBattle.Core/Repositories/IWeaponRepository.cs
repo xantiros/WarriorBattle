@@ -8,6 +8,7 @@ namespace WarriorBattle.Core.Repositories
     public interface IWeaponRepository
     {
         Weapon Get(Guid id);
+        void GetAttack(Weapon weapon);
         IEnumerable<Weapon> GetAll();
         void Add(Weapon weapon);
         void Remove(Guid id);

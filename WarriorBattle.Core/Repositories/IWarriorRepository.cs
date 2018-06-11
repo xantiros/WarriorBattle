@@ -11,8 +11,5 @@ namespace WarriorBattle.Core.Repositories
         IEnumerable<Warrior> GetAll();
         void Add(Warrior warrior);
         void Remove(int id);
-        void Training(Warrior warrior);
-        double Attack(Warrior warrior);
-        double Block(Warrior warrior);
     }
 }

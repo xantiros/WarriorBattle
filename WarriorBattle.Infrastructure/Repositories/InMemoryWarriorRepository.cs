@@ -31,27 +31,5 @@ namespace WarriorBattle.Infrastructure.Repositories
             var warrior = Get(id);
             _warriors.Remove(warrior);
         }
-
-        //random numbers
-        Random rdn = new Random();
-
-        public void Training(Warrior warrior)
-        {
-            warrior.SetHealth(warrior.Health + rdn.Next(10, 51));
-            warrior.SetAttMax(warrior.AttMax + rdn.Next(1, 11));
-            warrior.SetBlockMax(warrior.BlockMax + rdn.Next(1, 6));
-        }
-
-        public double Attack(Warrior warrior)
-        {
-            return rdn.Next(1, (int)warrior.AttMax);
-        }
-
-        public double Block(Warrior warrior)
-        {
-            return rdn.Next(1, (int)warrior.BlockMax);
-        }
-
-
     }
 }
