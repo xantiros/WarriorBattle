@@ -11,14 +11,14 @@ namespace WarriorBattle.Infrastructure.Services
     {
         private readonly IWarriorRepository _warriorRepository;
 
-        public WarriorService(IWarriorRepository warriorRepository) //konstruktor, na wejscie dajemy repozytoriums
+        public WarriorService(IWarriorRepository warriorRepository) //konstruktor, na wejscie dajemy repozytorium
         {
             _warriorRepository = warriorRepository;
         }
 
         public WarriorDto Get(int warriorId)
         {
-            var warrior = _warriorRepository.Get(warriorId); 
+            var warrior = _warriorRepository.Get(warriorId); //InMemoryWarriorRepository.Get
             return new WarriorDto
             {
                 WarriorId = warrior.WarriorId,
@@ -32,17 +32,21 @@ namespace WarriorBattle.Infrastructure.Services
         public void Create(int warriorId, string name, double health, double attMax, double blockMax)
         {
             var warrior = new Warrior(warriorId, name, health, attMax, blockMax);
-            _warriorRepository.Add(warrior);
+            _warriorRepository.Add(warrior); //InMemoryWarriorRepository.Add
         }
 
         //
         Random rdn = new Random();
         //
-        public void Training(Warrior warrior)
+        public void Training(WarriorDto warrior)
         {
-            warrior.SetHealth(warrior.Health + rdn.Next(10, 51));
-            warrior.SetAttMax(warrior.AttMax + rdn.Next(1, 11));
-            warrior.SetBlockMax(warrior.BlockMax + rdn.Next(1, 6));
+            warrior.Health = warrior.Health + rdn.Next(10, 51);
+            warrior.AttMax = warrior.AttMax + rdn.Next(1, 11);
+            warrior.BlockMax = warrior.BlockMax + rdn.Next(1, 6);
+
+            //warrior.SetHealth(warrior.Health + rdn.Next(10, 51));
+            //warrior.SetAttMax(warrior.AttMax + rdn.Next(1, 11));
+            //warrior.SetBlockMax(warrior.BlockMax + rdn.Next(1, 6));
         }
 
         public int Attack(int warriorId, int attack)
@@ -51,7 +55,7 @@ namespace WarriorBattle.Infrastructure.Services
             return rdn.Next(1, (int)warrior.AttMax);
         }
 
-        public double Block(WarriorDto warrior)
+        public int Block(WarriorDto warrior)
         {
             return rdn.Next(1, (int)warrior.BlockMax);
         }

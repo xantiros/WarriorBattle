@@ -23,7 +23,7 @@ namespace WarriorBattle.Infrastructure.Repositories
 
         public void Add(Warrior warrior)
         {
-            _warriors.Add(warrior);
+            _warriors.Add(warrior); //add to list
         }
 
         public void Remove(int id)

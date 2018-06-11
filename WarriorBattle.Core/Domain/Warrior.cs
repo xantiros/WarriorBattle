@@ -13,7 +13,7 @@ namespace WarriorBattle.Core.Domain
         public double AttMax { get; protected set; }
         public double BlockMax { get; protected set; }
         public DateTime CreatedAt { get; protected set; }
-        public IEnumerable<Weapon> weapons { get; protected set; } //lista broni
+        public IEnumerable<Weapon> Weapons { get; protected set; } //list of weapons
 
         protected Warrior()
         {
