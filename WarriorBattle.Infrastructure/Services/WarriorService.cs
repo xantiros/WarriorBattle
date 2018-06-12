@@ -49,9 +49,8 @@ namespace WarriorBattle.Infrastructure.Services
             //warrior.SetBlockMax(warrior.BlockMax + rdn.Next(1, 6));
         }
 
-        public int Attack(int warriorId, int attack)
+        public int Attack(WarriorDto warrior)
         {
-            var warrior = _warriorRepository.Get(warriorId);
             return rdn.Next(1, (int)warrior.AttMax);
         }
 

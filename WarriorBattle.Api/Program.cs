@@ -30,14 +30,15 @@ namespace WarriorBattle.Api
             }
             Console.WriteLine("\n");
 
-            var attack1 = warriorService.Attack(warr1.WarriorId, 10);
+            var attack1 = warriorService.Attack(warr1);
             Console.WriteLine($"{warr1.Name} attack with: {attack1}");
 
             var block = warriorService.Block(warr2);
             Console.WriteLine($"{warr2.Name} block: {block}");
 
+            Console.WriteLine($"{warr1.Name} health: {warr1.Health}, attack: {warr1.AttMax}, block: {warr1.BlockMax}");
             warriorService.Training(warr1);
-            Console.WriteLine($"{warr1.Name} New Health: {warr1.Health}");
+            Console.WriteLine($"{warr1.Name} new Health: {warr1.Health}, attack: {warr1.AttMax}, block: {warr1.BlockMax}");
 
 
 

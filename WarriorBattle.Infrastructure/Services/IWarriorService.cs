@@ -11,7 +11,7 @@ namespace WarriorBattle.Infrastructure.Services
         WarriorDto Get(int warriorId);
         void Create(int warriorId, string name, double health, double attMax, double blockMax);
         void Training(WarriorDto warrior);
-        int Attack(int warriorId, int attack);
+        int Attack(WarriorDto warrior);
         int Block(WarriorDto warrior);
     }
 }
