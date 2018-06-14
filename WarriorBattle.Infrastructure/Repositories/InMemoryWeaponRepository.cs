@@ -11,8 +11,9 @@ namespace WarriorBattle.Infrastructure.Repositories
     {
         private static ISet<Weapon> _weapons = new HashSet<Weapon>()
         {
-            new Weapon("Light Sword +10", 0, 10, 0),
-            new Weapon("Heavy Sword +20", 0, 20, 0)
+            Weapon.Create("Light Sword +10", 0, 10, 0),
+            Weapon.Create("Heavy Sword +20", 0, 20, 0),
+            Weapon.Create("Light Sheld +10", 0, 0, 10)
         };
 
         public void Add(Weapon weapon)
@@ -26,9 +27,9 @@ namespace WarriorBattle.Infrastructure.Repositories
         public IEnumerable<Weapon> GetAll()
             => _weapons;
 
-        public void GetAttack(Weapon weapon)
+        public void Update(Weapon weapon)
         {
-           //weapon.Attack +
+            throw new Exception("Can not update weapon yet.");
         }
 
         public void Remove(Guid id)

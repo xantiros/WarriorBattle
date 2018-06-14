@@ -13,5 +13,6 @@ namespace WarriorBattle.Infrastructure.Services
         void Training(WarriorDto warrior);
         int Attack(WarriorDto warrior);
         int Block(WarriorDto warrior);
+        void SetHealth(WarriorDto warrior, int health);
     }
 }

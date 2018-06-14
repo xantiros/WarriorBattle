@@ -58,5 +58,9 @@ namespace WarriorBattle.Infrastructure.Services
         {
             return rdn.Next(1, (int)warrior.BlockMax);
         }
+        public void SetHealth(WarriorDto warrior, int health)
+        {
+            warrior.Health = health;
+        }
     }
 }

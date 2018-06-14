@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using WarriorBattle.Infrastructure.DTO;
 using WarriorBattle.Infrastructure.Repositories;
 using WarriorBattle.Infrastructure.Services;
+using WarriorBattle.Infrastructure;
 
 namespace WarriorBattle.Api
 {
@@ -14,8 +15,8 @@ namespace WarriorBattle.Api
 
             WarriorService warriorService = new WarriorService(inMemoryWarriorRepository);
 
-            warriorService.Create(1, "Maximus", 500, 60, 20);
-            warriorService.Create(2, "Olimpus", 500, 60, 20);
+            warriorService.Create(1, "Maximus", 300, 60, 20);
+            warriorService.Create(2, "Olimpus", 300, 60, 20);
 
             var warr1 = warriorService.Get(1);
             var warr2 = warriorService.Get(2);
@@ -30,8 +31,12 @@ namespace WarriorBattle.Api
             }
             Console.WriteLine("\n");
 
-            var attack1 = warriorService.Attack(warr1);
-            Console.WriteLine($"{warr1.Name} attack with: {attack1}");
+            Battle battle = new Battle();
+            Battle.StartFight(warriorService, warr1, warr2);
+
+            /*
+            var attack = warriorService.Attack(warr1);
+            Console.WriteLine($"{warr1.Name} attack with: {attack}");
 
             var block = warriorService.Block(warr2);
             Console.WriteLine($"{warr2.Name} block: {block}");
@@ -40,7 +45,7 @@ namespace WarriorBattle.Api
             warriorService.Training(warr1);
             Console.WriteLine($"{warr1.Name} new Health: {warr1.Health}, attack: {warr1.AttMax}, block: {warr1.BlockMax}");
 
-
+            */
 
             Console.ReadKey();
         }
